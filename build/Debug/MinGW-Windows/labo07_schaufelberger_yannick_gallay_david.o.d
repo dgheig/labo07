@@ -1,5 +1,0 @@
-build/Debug/MinGW-Windows/labo07_schaufelberger_yannick_gallay_david.o: \
- labo07_schaufelberger_yannick_gallay_david.cpp \
- labo07_schaufelberger_yannick_gallay_david.h
-
-labo07_schaufelberger_yannick_gallay_david.h:
