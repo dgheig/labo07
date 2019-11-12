@@ -9,7 +9,7 @@ But         :
 Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
-#include "labo07_schaufelberger_yannick_gallay_david.h"
+#include "labo_07_schaufelberger_yannick_gallay_david.h"
 
 #include <iostream>
 #include <iomanip>
@@ -164,7 +164,8 @@ bool check_date_order(
    return true;
 }
 
-int main() {
+
+void ask_and_compute_delta_day_between_two_dates() {
 
    int start_day;
    int start_month;
@@ -182,9 +183,26 @@ int main() {
            end_day, end_month, end_year));
 
    int affichage = daysBetweenDates(start_day, start_month, start_year, end_day, end_month, end_year);
-   
+
    cout << affichage << endl;
 
+}
+
+bool ask_for_restart() {
+   while(true) {
+      cout << "Voulez-vous recommencer? [O/N]" << endl;
+      char c = getchar();
+      CLEAR_BUFFER;
+      if ( c == 'O') return true;
+      else if ( c == 'N') return false;
+   }
+}
+
+int main() {
+
+   do {
+      ask_and_compute_delta_day_between_two_dates();
+   } while(ask_for_restart())
    return EXIT_SUCCESS;
 }
 
