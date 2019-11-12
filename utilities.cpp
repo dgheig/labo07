@@ -36,7 +36,7 @@ bool is_date_valide(const int& day, const int& month, const int& year) {
    cout << day << " " << month << " " << year << endl;
 
    if (year < MIN_YEAR || year > MAX_YEAR) {
-      cerr << "Les dates doivent être comprises entre " << MIN_YEAR
+      cerr << "Les dates doivent etre comprises entre " << MIN_YEAR
               << " et " << MAX_YEAR
               << endl;
       return false;
@@ -44,7 +44,7 @@ bool is_date_valide(const int& day, const int& month, const int& year) {
 
    if (month < JANUAR || month > DECEMBER) {
       cerr << setfill('0')
-              << "Les mois doivent être compris entre " << JANUAR
+              << "Les mois doivent etre compris entre " << JANUAR
               << " et " << DECEMBER
               << endl;
       return false;
@@ -67,7 +67,7 @@ bool is_date_valide(const int& day, const int& month, const int& year) {
       case SEPTEMBER:
       case NOVEMBER:
          if (day > 30) {
-            cerr << "Le nombre de jours depassent le maximum du mois" << endl;
+            cerr << "Le nombre de jours depasse le maximum du mois" << endl;
             return false;
          }
          return true;
@@ -116,7 +116,6 @@ void ask_for_valide_date(const string date, int& day, int& month, int& year) {
 
 /**
     Check if start date is before end date
- * useless
  */
 bool check_date_order(
         const int& start_day, const int& start_month, const int& start_year,
@@ -161,9 +160,9 @@ void ask_and_compute_delta_day_between_two_dates() {
    } while (!check_date_order(start_day, start_month, start_year,
            end_day, end_month, end_year));
 
-   int affichage = days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year);
+   int days_between_dates = days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year);
 
-   cout << affichage << endl;
+   cout << "Il y a " << days_between_dates << " jours entre les deux dates entrees." << endl;
 
 }
 
