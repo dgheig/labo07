@@ -37,7 +37,9 @@ enum MONTHS {
    DECEMBRE
 };
 
-char DATE_SEPARATOR = '-';
+const char DATE_SEPARATOR = '-';
+const char RESTART_CHAR   = 'O';
+const char STOP_CHAR      = 'N';
 
 bool ignore_date_separator() {
    if (cin.fail())
@@ -193,13 +195,12 @@ bool ask_for_restart() {
       cout << "Voulez-vous recommencer? [O/N]" << endl;
       char c = getchar();
       CLEAR_BUFFER;
-      if ( c == 'O') return true;
-      else if ( c == 'N') return false;
+      if ( c == RESTART_CHAR) return true;
+      else if ( c == STOP_CHAR) return false;
    }
 }
 
 int main() {
-
    do {
       ask_and_compute_delta_day_between_two_dates();
    } while(ask_for_restart())

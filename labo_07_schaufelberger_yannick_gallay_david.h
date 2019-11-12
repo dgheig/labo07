@@ -1,4 +1,4 @@
-//labo07_schaufelberger_yannick_gallay_david.h
+//labo_07_schaufelberger_yannick_gallay_david.h
 
 #ifndef LABO07_SCHAUFELBERGER_YANNICK_GALLAY_DAVID_H
 #define LABO07_SCHAUFELBERGER_YANNICK_GALLAY_DAVID_H
