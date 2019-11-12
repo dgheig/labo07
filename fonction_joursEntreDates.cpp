@@ -7,13 +7,11 @@
 
 using namespace std;
 
-int daysBetweenDates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
-
 int convertToJulienDays(int day, int month, int year);
 
-int convertToJulienDaysRevised(int day, int month, int year);
 
-int main() {
+
+int Test() {
 
    char recommencer;
    const char RECOMMENCER_OUI = 'o';
@@ -38,7 +36,7 @@ int main() {
 
       VIDER_BUFFER;
 
-      int affichage = daysBetweenDates(startDay, startMonth, startYear, endDay, endMonth, endYear);
+      int affichage = 0;
 
       cout << affichage << endl;
 
@@ -64,20 +62,6 @@ int main() {
    return EXIT_SUCCESS;
 }
 
-int daysBetweenDates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
-
-   int startJulien = convertToJulienDaysRevised(startDay, startMonth, startYear);
-   cout << endl;
-   int endJulien = convertToJulienDaysRevised(endDay, endMonth, endYear);
-
-   cout << startJulien << " : " << endJulien << endl;
-
-   int daysBetweenDates = endJulien - startJulien;
-
-   return daysBetweenDates;
-
-}
-
 int convertToJulienDays(int day, int month, int year) {
 
    int a = (int) trunc((14 - month) / 12);
@@ -85,26 +69,6 @@ int convertToJulienDays(int day, int month, int year) {
    int m = month + 12 * a - 3;
 
    int JDN = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045;
-
-   cout << "a : " << a << endl;
-   cout << "y : " << y << endl;
-   cout << "m : " << m << endl;
-   cout << "day : " << day << endl;
-   cout << "month : " << month << endl;
-   cout << "year : " << year << endl;
-   cout << "JDN : " << JDN << endl;
-
-   return JDN;
-
-}
-
-int convertToJulienDaysRevised(int day, int month, int year) {
-
-   int a = (14 - month) / 12;
-   int y = year - 1900 - a;
-   int m = month + 12 * a - 3;
-
-   int JDN = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 + 58;
 
    cout << "a : " << a << endl;
    cout << "y : " << y << endl;
