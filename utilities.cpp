@@ -1,3 +1,15 @@
+/*
+-----------------------------------------------------------------------------------
+Laboratoire : Labo_07
+Fichier     : labo07_schaufelberger_yannick_gallay_david.cpp
+Auteur(s)   : Yannick Schaufelberger et David Gallay
+Date        : 11.11.2019
+
+But         :
+Remarque(s) :
+Compilateur : 
+-----------------------------------------------------------------------------------*/
+
 #include "utilities.h"
 #include <iostream>
 #include <iomanip>
@@ -12,7 +24,7 @@ bool ignore_date_separator() {
    return getchar() != DATE_SEPARATOR;
 }
 
-bool is_bissextile(const int& year) {
+bool is_leap_year(const int& year) {
 
    if (year % 4) return false;
    if (year % 100) return true;
@@ -30,10 +42,10 @@ bool is_date_valide(const int& day, const int& month, const int& year) {
       return false;
    }
 
-   if (month < JANVIER || month > DECEMBRE) {
+   if (month < JANUAR || month > DECEMBER) {
       cerr << setfill('0')
-              << "Les mois doivent être compris entre " << JANVIER
-              << " et " << DECEMBRE
+              << "Les mois doivent être compris entre " << JANUAR
+              << " et " << DECEMBER
               << endl;
       return false;
    }
@@ -44,16 +56,16 @@ bool is_date_valide(const int& day, const int& month, const int& year) {
    }
    switch (month) {
 
-      case FEVRIER:
-         if (day > 29 || (!is_bissextile(year) && day > 28)) {
+      case FEBRUAR:
+         if (day > 29 || (!is_leap_year(year) && day > 28)) {
             cerr << "Le nombre de jour maximum du mois de fevrier est de 29 les annee bissextile, sinon 28" << endl;
             return false;
          }
 
-      case AVRIL:
-      case JUIN:
-      case SEPTEMBRE:
-      case NOVEMBRE:
+      case APRIL:
+      case JUNE:
+      case SEPTEMBER:
+      case NOVEMBER:
          if (day > 30) {
             cerr << "Le nombre de jours depassent le maximum du mois" << endl;
             return false;
@@ -149,7 +161,7 @@ void ask_and_compute_delta_day_between_two_dates() {
    } while (!check_date_order(start_day, start_month, start_year,
            end_day, end_month, end_year));
 
-   int affichage = daysBetweenDates(start_day, start_month, start_year, end_day, end_month, end_year);
+   int affichage = days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year);
 
    cout << affichage << endl;
 
@@ -158,7 +170,7 @@ void ask_and_compute_delta_day_between_two_dates() {
 bool ask_for_restart() {
    while(true) {
       cout << "Voulez-vous recommencer? [O/N]" << endl;
-      char c = getchar();
+      char c = (char) getchar();
       CLEAR_BUFFER;
       if ( c == RESTART_CHAR) return true;
       else if ( c == STOP_CHAR) return false;
@@ -166,36 +178,26 @@ bool ask_for_restart() {
 }
 
 
-int daysBetweenDates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
+int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
 
-   int startJulien = getDaysSinceReferenceDay(startDay, startMonth, startYear);
+   int daysSinceStart = get_days_since_reference_day(startDay, startMonth, startYear);
    cout << endl;
-   int endJulien = getDaysSinceReferenceDay(endDay, endMonth, endYear);
+   int daysSinceEnd = get_days_since_reference_day(endDay, endMonth, endYear);
 
-   cout << startJulien << " : " << endJulien << endl;
-
-   int daysBetweenDates = endJulien - startJulien;
+   int daysBetweenDates = daysSinceEnd - daysSinceStart;
 
    return daysBetweenDates;
 
 }
 
-int getDaysSinceReferenceDay(int day, int month, int year) {
+int get_days_since_reference_day(int day, int month, int year) {
 
    int a = (14 - month) / 12;
    int y = year - 1900 - a;
    int m = month + 12 * a - 3;
 
-   int JDN = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 + 58;
+   int days = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 + 58;
 
-   cout << "a : " << a << endl;
-   cout << "y : " << y << endl;
-   cout << "m : " << m << endl;
-   cout << "day : " << day << endl;
-   cout << "month : " << month << endl;
-   cout << "year : " << year << endl;
-   cout << "JDN : " << JDN << endl;
-
-   return JDN;
+   return days;
 
 }

@@ -10,18 +10,18 @@ const int MIN_YEAR = 1900;
 const int MAX_YEAR = 2300;
 
 enum MONTHS {
-   JANVIER = 1,
-   FEVRIER,
-   MARS,
-   AVRIL,
-   MAI,
-   JUIN,
-   JUILLET,
-   AOUT,
-   SEPTEMBRE,
-   OCTOBRE,
-   NOVEMBRE,
-   DECEMBRE
+   JANUAR = 1,
+   FEBRUAR,
+   MARCH,
+   APRIL,
+   MAY,
+   JUNE,
+   JULY,
+   AUGUST,
+   SEPTEMBER,
+   OCTOBER,
+   NOVEMBER,
+   DECEMBER
 };
 
 const char DATE_SEPARATOR = '-';
@@ -29,7 +29,7 @@ const char RESTART_CHAR   = 'O';
 const char STOP_CHAR      = 'N';
 
 
-bool is_bissextile(const int& year);
+bool is_leap_year(const int& year);
 
 bool is_date_valide(const int& day, const int& month, const int& year);
 
@@ -45,9 +45,9 @@ void ask_and_compute_delta_day_between_two_dates();
 
 bool ask_for_restart();
 
-int daysBetweenDates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
+int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
 
-int getDaysSinceReferenceDay(int day, int month, int year);
+int get_days_since_reference_day(int day, int month, int year);
 
 
 #endif // UTILITIES_H
