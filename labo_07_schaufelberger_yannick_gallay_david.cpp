@@ -10,6 +10,7 @@ Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
 #include "src/delta_date.h"
+#include "src/interface.h"
 #include <cstdlib>
 
 int main() {

@@ -1,3 +1,4 @@
 *.exe
 *.o
 builds/*
+compile_main.sh
