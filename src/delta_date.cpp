@@ -2,7 +2,6 @@
 #include "delta_date.h"
 #include "constants.h"
 #include <iostream>
-#include <string>
 
 using namespace std;
 
