@@ -34,7 +34,6 @@ bool is_leap_year(int year) {
 }
 
 bool is_date_valide(int day, int month, int year) {
-   cout << day << " " << month << " " << year << endl;
 
    if (year < MIN_YEAR || year > MAX_YEAR) {
       cerr << "Les dates doivent etre comprises entre " << MIN_YEAR
@@ -142,7 +141,6 @@ bool check_date_order(
 
    return true;
 }
-
 
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
 

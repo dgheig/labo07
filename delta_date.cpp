@@ -23,9 +23,10 @@ void ask_and_compute_delta_day_between_two_dates() {
    int delta_days = days_between_dates(
                         start_day, start_month, start_year,
                         end_day, end_month, end_year);
-
-   std::cout << "Il y a " << delta_days << " jours entre les deux dates entrees." << std::endl;
-
+    std::cout << "Il y a "
+              << days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year)
+              << " jours entre les deux dates entrees."
+              << std::endl;
 }
 
 bool ask_for_restart() {
