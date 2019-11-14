@@ -33,7 +33,7 @@ bool is_leap_year(int year) {
    return true;
 }
 
-bool is_date_valide(int day, int month, int year) {
+bool is_date_valid(int day, int month, int year) {
 
    if (year < MIN_YEAR || year > MAX_YEAR) {
       cerr << "Les dates doivent etre comprises entre " << MIN_YEAR
@@ -107,11 +107,11 @@ bool ask_date(const string& date, int& day, int& month, int& year) {
     Ask the user for date up that the date is valide
     return void
 */
-void ask_for_valide_date(const string& date, int& day, int& month, int& year) {
+void ask_for_valid_date(const string& date, int& day, int& month, int& year) {
    bool re_ask = false;
    do {
       re_ask = !ask_date(date, day, month, year);
-   } while (re_ask || !is_date_valide(day, month, year));
+   } while (re_ask || !is_date_valid(day, month, year));
 }
 
 /**

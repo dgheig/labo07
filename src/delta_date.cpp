@@ -13,8 +13,8 @@ void ask_and_compute_delta_day_between_two_dates() {
    int end_year;
 
    do {
-      ask_for_valide_date("date de debut", start_day, start_month, start_year);
-      ask_for_valide_date("date de fin", end_day, end_month, end_year);
+      ask_for_valid_date("date de debut", start_day, start_month, start_year);
+      ask_for_valid_date("date de fin", end_day, end_month, end_year);
 
    } while (!check_date_order(
                start_day, start_month, start_year,
