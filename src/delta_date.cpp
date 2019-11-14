@@ -1,6 +1,9 @@
 #include "utilities.h"
 #include "constants.h"
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 void ask_and_compute_delta_day_between_two_dates() {
 
@@ -20,11 +23,46 @@ void ask_and_compute_delta_day_between_two_dates() {
                start_day, start_month, start_year,
                end_day, end_month, end_year));
 
-   int delta_days = days_between_dates(
-                        start_day, start_month, start_year,
-                        end_day, end_month, end_year);
-    std::cout << "Il y a "
+    cout << "Il y a "
               << days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year)
               << " jours entre les deux dates entrees."
-              << std::endl;
+              << endl;
+}
+
+bool ask_date(const string& date, int& day, int& month, int& year) {
+   
+   cout << "Entrez la " << date << " dans le format DD-MM-YYYY: " << endl;
+   cin >> day;
+   if (ignore_date_separator()) {
+      cerr << "La separation de la date doit etre '-' " << endl;
+      CLEAR_BUFFER;
+      return false;
+   }
+   cin >> month;
+   if (ignore_date_separator()) {
+      cerr << "La separation de la date doit etre '-' " << endl;
+      CLEAR_BUFFER;
+      return false;
+   }
+   cin >> year;
+   CLEAR_BUFFER;
+   if (cin.fail()) {
+      cin.clear();
+      return false;
+   }
+   return true;
+
+}
+
+/**
+    Ask the user for date up that the date is valide
+    return void
+*/
+void ask_for_valid_date(const string& date, int& day, int& month, int& year) {
+   
+   bool re_ask = false;
+   do {
+      re_ask = !ask_date(date, day, month, year);
+   } while (re_ask || !is_date_valid(day, month, year));
+
 }

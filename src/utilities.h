@@ -34,19 +34,19 @@ bool is_leap_year(int year);
 bool is_date_valid(int day, int month, int year);
 
 /**
- * @param date string telling the user if it's the start date or end date
- * @param day 
- * @param month
- * @param year
- * @return true if the input format corresponds to DD-MM-YYYY
+ * @param start_day a number between 1 and 31
+ * @param start_month a number between 1 and 12
+ * @param start_year a number between 1900 and 2300
+ * @param end_day a number between 1 and 31
+ * @param end_month a number between 1 and 12
+ * @param end_year a number between 1900 and 2300
+ * @return true if the date composed of start_day, start_month and start_year is
+ * before the date composed of end_day, end_month and end_year
  */
-bool ask_date(const std::string& date, int& day, int& month, int& year);
-
-void ask_for_valid_date(const std::string& date, int& day, int& month, int& year);
-
 bool check_date_order(
         int start_day, int start_month, int start_year,
         int end_day, int end_month, int end_year);
+
 
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
 

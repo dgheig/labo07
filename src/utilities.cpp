@@ -76,47 +76,7 @@ bool is_date_valid(int day, int month, int year) {
    return true;
 }
 
-/**
-    Return True if the input format is valid according to DD-MM-YYYY
-    Else return false
-*/
-bool ask_date(const string& date, int& day, int& month, int& year) {
-   cout << "Entrez la " << date << " dans le format DD-MM-YYYY: " << endl;
-   cin >> day;
-   if (ignore_date_separator()) {
-      cerr << "La separation de la date doit etre '-' " << endl;
-      CLEAR_BUFFER;
-      return false;
-   }
-   cin >> month;
-   if (ignore_date_separator()) {
-      cerr << "La separation de la date doit etre '-' " << endl;
-      CLEAR_BUFFER;
-      return false;
-   }
-   cin >> year;
-   CLEAR_BUFFER;
-   if (cin.fail()) {
-      cin.clear();
-      return false;
-   }
-   return true;
-}
 
-/**
-    Ask the user for date up that the date is valide
-    return void
-*/
-void ask_for_valid_date(const string& date, int& day, int& month, int& year) {
-   bool re_ask = false;
-   do {
-      re_ask = !ask_date(date, day, month, year);
-   } while (re_ask || !is_date_valid(day, month, year));
-}
-
-/**
-    Check if start date is before end date
-*/
 bool check_date_order(
         int start_day, int start_month, int start_year,
         int end_day, int end_month, int end_year) {
