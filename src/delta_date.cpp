@@ -28,15 +28,3 @@ void ask_and_compute_delta_day_between_two_dates() {
               << " jours entre les deux dates entrees."
               << std::endl;
 }
-
-bool ask_for_restart() {
-   while(true) {
-      std::cout << "Voulez-vous recommencer? ["
-                << RESTART_CHAR << "/" << STOP_CHAR
-                << "]" << std::endl;
-      char c = (char) getchar();
-      CLEAR_BUFFER;
-      if ( c == RESTART_CHAR) return true;
-      else if ( c == STOP_CHAR) return false;
-   }
-}

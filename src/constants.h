@@ -20,7 +20,5 @@ enum MONTHS {
 };
 
 const char DATE_SEPARATOR = '-';
-const char RESTART_CHAR   = 'O';
-const char STOP_CHAR      = 'N';
 
 #endif // CONSTANTS_H
