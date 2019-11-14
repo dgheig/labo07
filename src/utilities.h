@@ -11,17 +11,15 @@
 
 bool is_leap_year(int year);
 
-bool is_date_valide(int day, int month, int year);
+bool is_date_valid(int day, int month, int year);
 
 bool ask_date(const std::string& date, int& day, int& month, int& year);
 
-void ask_for_valide_date(const std::string& date, int& day, int& month, int& year);
+void ask_for_valid_date(const std::string& date, int& day, int& month, int& year);
 
 bool check_date_order(
         int start_day, int start_month, int start_year,
         int end_day, int end_month, int end_year);
-
-
 
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
 
