@@ -77,7 +77,7 @@ bool is_date_valid(int day, int month, int year) {
 }
 
 /**
-    Return True if the input format is valide according to DD-MM-YYYY
+    Return True if the input format is valid according to DD-MM-YYYY
     Else return false
 */
 bool ask_date(const string& date, int& day, int& month, int& year) {
