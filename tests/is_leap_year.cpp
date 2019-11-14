@@ -14,7 +14,6 @@ Compilateur :
 #include <iostream>
 using namespace std;
 
-is_leap_year(int year)
 bool check_function_is_leap_year(int year, bool expected) {
 
     if (is_leap_year(year) != expected) {
@@ -27,7 +26,7 @@ bool check_function_is_leap_year(int year, bool expected) {
 
 int main() {
 
-    check_function_days_between_dates(1, 1, 2019);
+    check_function_is_leap_year(2000, true);
 
     return EXIT_SUCCESS;
 }
