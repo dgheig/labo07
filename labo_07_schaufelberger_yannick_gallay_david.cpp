@@ -9,9 +9,8 @@ But         :
 Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
-#include "delta_date.h"
+#include "src/delta_date.h"
 #include <cstdlib>
-
 
 int main() {
    do {

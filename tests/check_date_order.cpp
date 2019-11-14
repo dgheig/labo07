@@ -10,7 +10,7 @@ Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
 
-#include "../utilities.h"
+#include "../src/utilities.h"
 #include <iostream>
 using namespace std;
 

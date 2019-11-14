@@ -10,7 +10,7 @@ Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
 
-#include "../utilities.h"
+#include "../src/utilities.h"
 #include <iostream>
 using namespace std;
 
@@ -35,7 +35,6 @@ bool check_function_days_between_dates(
              << "Test result: " << result                               << endl
              << endl;
     }
-
 }
 
 int main() {
