@@ -1,4 +1,5 @@
 #include "utilities.h"
+#include "delta_date.h"
 #include "constants.h"
 #include <iostream>
 #include <string>
@@ -30,7 +31,7 @@ void ask_and_compute_delta_day_between_two_dates() {
 }
 
 bool ask_date(const string& date, int& day, int& month, int& year) {
-   
+
    cout << "Entrez la " << date << " dans le format DD-MM-YYYY: " << endl;
    cin >> day;
    if (ignore_date_separator()) {
@@ -59,7 +60,7 @@ bool ask_date(const string& date, int& day, int& month, int& year) {
     return void
 */
 void ask_for_valid_date(const string& date, int& day, int& month, int& year) {
-   
+
    bool re_ask = false;
    do {
       re_ask = !ask_date(date, day, month, year);

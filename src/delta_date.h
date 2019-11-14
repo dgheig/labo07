@@ -1,6 +1,7 @@
 #ifndef DELTA_DATE_H
 #define DELTA_DATE_H
 
+#include <string>
 void ask_and_compute_delta_day_between_two_dates();
 
 /**
