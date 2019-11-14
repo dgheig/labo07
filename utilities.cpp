@@ -33,7 +33,6 @@ bool is_leap_year(const int& year) {
 }
 
 bool is_date_valide(const int& day, const int& month, const int& year) {
-   cout << day << " " << month << " " << year << endl;
 
    if (year < MIN_YEAR || year > MAX_YEAR) {
       cerr << "Les dates doivent etre comprises entre " << MIN_YEAR
@@ -142,7 +141,6 @@ bool check_date_order(
    return true;
 }
 
-
 void ask_and_compute_delta_day_between_two_dates() {
 
    int start_day;
@@ -160,22 +158,22 @@ void ask_and_compute_delta_day_between_two_dates() {
    } while (!check_date_order(start_day, start_month, start_year,
            end_day, end_month, end_year));
 
-   int days_between_dates = days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year);
-
-   cout << "Il y a " << days_between_dates << " jours entre les deux dates entrees." << endl;
+   cout << "Il y a "
+        << days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year)
+        << " jours entre les deux dates entrees."
+        << endl;
 
 }
 
 bool ask_for_restart() {
-   while(true) {
+   while (true) {
       cout << "Voulez-vous recommencer? [O/N]" << endl;
       char c = (char) getchar();
       CLEAR_BUFFER;
-      if ( c == RESTART_CHAR) return true;
-      else if ( c == STOP_CHAR) return false;
+      if (c == RESTART_CHAR) return true;
+      else if (c == STOP_CHAR) return false;
    }
 }
-
 
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
 
