@@ -1,79 +1,56 @@
 /*
 -----------------------------------------------------------------------------------
 Laboratoire : Labo_07
-Fichier     : labo_07_schaufelberger_yannick_gallay_david.cpp
+Fichier     : check_date_order.cpp
 Auteur(s)   : Yannick Schaufelberger et David Gallay
-Date        : 11.11.2019
+Date        : 14.11.2019
 
-But         :
+But         : test the check_date_order function
 Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
 
+#include "../utilities.h"
 #include <iostream>
-#include <limits>
-#include <cstdlib>
 using namespace std;
 
-#define IGNORE_DATE_SEPARATOR cin.clear(); getchar()
-#define CLEAR_BUFFER std::cin.ignore\
-                     (numeric_limits<streamsize>::max(), '\n')
-#define PAUSE CLEAR_BUFFER
 
-bool is_date_valide(const int& day, const int& month, const int& year) {
-    cout << day << " " << month << " " << year << endl;
-    return true;
-}
+bool check_function_check_date_order(
+    int start_day, int start_month, int start_year,
+    int end_day, int end_month, int end_year,
+    bool expected ) {
 
-void ask_for_valide_date(const string date, int& day, int& month, int& year) {
+    bool result;
 
-    do {
-        cout << "Entrez la " << date << " dans le format DD-MM-YYYY: " << endl;
-        cin >> day;
-        IGNORE_DATE_SEPARATOR;
-        cin >> month;
-        IGNORE_DATE_SEPARATOR;
-        cin >> year;
-        CLEAR_BUFFER;
-    } while(!is_date_valide(day, month, year));
-}
+    result = check_date_order(
+        start_day, start_month, start_year,
+        end_day, end_month, end_year);
 
-bool check_date_order(
-    const int& start_day, const int& start_month, const int& start_year,
-    const int& end_day, const int& end_month, const int& end_year) {
+    if (result != expected) {
+        cerr << "Test does not correspond the expected result."         << endl
+             << "Given dates:"                                          << endl
+             << start_day << '-' << start_month << '-' << start_year    << endl
+             << end_day   << '-' << end_month   << '-' << end_year      << endl
+             << "Expected: "    << boolalpha << expected                << endl
+             << "Test result: " << boolalpha << result                  << endl
+             << endl;
+    }
 
-    if(end_year < start_year) return true;
-    else if (end_year > start_year) return false;
-
-    if(end_month < start_month) return true;
-    else if (end_month > start_month) return false;
-
-    if(end_day < start_day) return true;
-    else if (end_day > start_day) return false;
-
-    return true;
 }
 
 int main() {
 
-    int start_day,
-        start_month,
-        start_year;
+    check_function_check_date_order(
+            1, 1, 2019,
+            1, 3, 2019,
+            true
+    );
 
-    int end_day,
-        end_month,
-        end_year;
-
-    do {
-        ask_for_valide_date(
-            "date de debut",
-            start_day, start_month, start_year);
-        ask_for_valide_date(
-            "date de fin",
-            end_day, end_month, end_year);
-
-    } while(!check_date_order(start_day, start_month, start_year,
-                    end_day, end_month, end_year));
+    check_function_check_date_order(
+            1, 1, 2019,
+            1, 3, 2000,
+            false
+    );
 
 
 

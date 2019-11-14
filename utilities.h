@@ -4,46 +4,24 @@
 #define UTILITIES_H
 
 #include <string>
-using namespace std;
+#include <iostream>
+#include <limits>
 
-const int MIN_YEAR = 1900;
-const int MAX_YEAR = 2300;
+#define CLEAR_BUFFER std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n')
 
-enum MONTHS {
-   JANUAR = 1,
-   FEBRUAR,
-   MARCH,
-   APRIL,
-   MAY,
-   JUNE,
-   JULY,
-   AUGUST,
-   SEPTEMBER,
-   OCTOBER,
-   NOVEMBER,
-   DECEMBER
-};
+bool is_leap_year(int year);
 
-const char DATE_SEPARATOR = '-';
-const char RESTART_CHAR   = 'O';
-const char STOP_CHAR      = 'N';
+bool is_date_valide(int day, int month, int year);
 
+bool ask_date(const std::string& date, int& day, int& month, int& year);
 
-bool is_leap_year(const int& year);
-
-bool is_date_valide(const int& day, const int& month, const int& year);
-
-bool ask_date(const string date, int& day, int& month, int& year);
-
-void ask_for_valide_date(const string date, int& day, int& month, int& year);
+void ask_for_valide_date(const std::string& date, int& day, int& month, int& year);
 
 bool check_date_order(
-        const int& start_day, const int& start_month, const int& start_year,
-        const int& end_day, const int& end_month, const int& end_year);
+        int start_day, int start_month, int start_year,
+        int end_day, int end_month, int end_year);
 
-void ask_and_compute_delta_day_between_two_dates();
 
-bool ask_for_restart();
 
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
 
