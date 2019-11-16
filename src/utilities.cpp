@@ -117,13 +117,13 @@ bool check_date_order(
 
 bool check_date_in_correct_range(int day, int month, int year) {
    if(_check_date_order(MIN_DAY, MIN_MONTH, MIN_YEAR, day, month, year) != NO_ERROR) {
-      cerr << "Les dates choisies doivent être après le "
+      cerr << "Les dates choisies doivent Ãªtre aprÃ¨s le "
            << MIN_DAY << '-' << MIN_MONTH << '-' << MIN_YEAR
            << endl;
       return false;
    }
    if(_check_date_order(day, month, year, MAX_DAY, MAX_MONTH, MAX_YEAR) != NO_ERROR) {
-      cerr << "Les dates choisies doivent être avant le "
+      cerr << "Les dates choisies doivent Ãªtre avant le "
            << MAX_DAY << '-' << MAX_MONTH << '-' << MAX_YEAR
            << endl;
       return false;
@@ -145,11 +145,11 @@ int days_between_dates(int startDay, int startMonth, int startYear, int endDay, 
 
 int get_days_since_reference_day(int day, int month, int year) {
 
-   int a = (14 - month) / 12;
-   int y = year - 1900 - a;
-   int m = month + 12 * a - 3;
+   int start_of_year_shifter = (14 - month) / 12;
+   int number_of_years = year - 1900 - start_of_year_shifter;
+   int number_of_months = month + 12 * start_of_year_shifter - 3; 
 
-   int days = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 + 58;
+   int days = day + (153 * number_of_months + 2) / 5 + 365 * number_of_years + number_of_years / 4 - number_of_years / 100 + number_of_years / 400 + 58;
 
    return days;
 
