@@ -29,6 +29,9 @@ DateOrderFlag _check_date_order(
         int start_day, int start_month, int start_year,
         int end_day, int end_month, int end_year);
 
+
+bool check_date_in_correct_range(int day, int month, int year);
+
 bool is_leap_year(int year) {
 
    if (year % 4) return false;
@@ -37,20 +40,32 @@ bool is_leap_year(int year) {
    return true;
 }
 
-bool is_date_valid(int day, int month, int year) {
-
-   if (year < MIN_YEAR || year > MAX_YEAR) {
-      cerr << "Les dates doivent etre comprises entre " << MIN_YEAR
-              << " et " << MAX_YEAR
-              << endl;
+bool check_date_in_correct_range(int day, int month, int year) {
+   if(_check_date_order(MIN_DAY, MIN_MONTH, MIN_YEAR, day, month, year) != NO_ERROR) {
+      cerr << "Les dates choisies doivent être après le "
+           << MIN_DAY << '-' << MIN_MONTH << '-' << MIN_YEAR
+           << endl;
       return false;
    }
+   if(_check_date_order(day, month, year, MAX_DAY, MAX_MONTH, MAX_YEAR) != NO_ERROR) {
+      cerr << "Les dates choisies doivent être avant le "
+           << MAX_DAY << '-' << MAX_MONTH << '-' << MAX_YEAR
+           << endl;
+      return false;
+   }
+   return true;
+}
+
+bool is_date_valid(int day, int month, int year) {
+
+   if(!check_date_in_correct_range(day, month, year)) return false;
 
    if (month < JANUAR || month > DECEMBER) {
       cerr << setfill('0')
-              << "Les mois doivent etre compris entre " << JANUAR
-              << " et " << DECEMBER
-              << endl;
+           << "Les mois doivent etre compris entre "
+           << setw(2) << JANUAR
+           << " et "  << DECEMBER
+           << endl;
       return false;
    }
 
@@ -74,8 +89,6 @@ bool is_date_valid(int day, int month, int year) {
             cerr << "Le nombre de jours depasse le maximum du mois" << endl;
             return false;
          }
-         return true;
-
    }
    return true;
 }
@@ -115,31 +128,13 @@ bool check_date_order(
    }
 }
 
-bool check_date_in_correct_range(int day, int month, int year) {
-   if(_check_date_order(MIN_DAY, MIN_MONTH, MIN_YEAR, day, month, year) != NO_ERROR) {
-      cerr << "Les dates choisies doivent être après le "
-           << MIN_DAY << '-' << MIN_MONTH << '-' << MIN_YEAR
-           << endl;
-      return false;
-   }
-   if(_check_date_order(day, month, year, MAX_DAY, MAX_MONTH, MAX_YEAR) != NO_ERROR) {
-      cerr << "Les dates choisies doivent être avant le "
-           << MAX_DAY << '-' << MAX_MONTH << '-' << MAX_YEAR
-           << endl;
-      return false;
-   }
-   return true;
-}
 
+int days_between_dates(int start_day, int start_month, int start_year, int end_day, int end_month, int end_year) {
 
-int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
+   int days_since_start = get_days_since_reference_day(start_day, start_month, start_year);
+   int days_since_end = get_days_since_reference_day(end_day, end_month, end_year);
 
-   int daysSinceStart = get_days_since_reference_day(startDay, startMonth, startYear);
-   int daysSinceEnd = get_days_since_reference_day(endDay, endMonth, endYear);
-
-   int daysBetweenDates = daysSinceEnd - daysSinceStart;
-
-   return daysBetweenDates;
+   return days_since_end - days_since_start;
 
 }
 

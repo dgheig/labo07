@@ -23,7 +23,7 @@ bool ignore_date_separator();
 bool ask_date(const std::string& date, int& day, int& month, int& year);
 
 /*!
- * @param date
+ * @param date string telling the user if it's the start date or end date
  * @param day input of the user in function ask_date()
  * @param month input of the user in function ask_date()
  * @param year input of the user in function ask_date()

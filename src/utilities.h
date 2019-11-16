@@ -50,7 +50,7 @@ bool check_date_order(
  * @return the number of days between the start date and the end date
  * @brief This returns a negative number if the start date is after the end date
  */
-int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
+int days_between_dates(int start_day, int start_month, int start_year, int end_day, int end_month, int end_year);
 
 /*!
  * @param day
