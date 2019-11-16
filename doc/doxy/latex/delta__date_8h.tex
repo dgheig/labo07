@@ -2,3 +2,92 @@
 \label{delta__date_8h}\index{delta\+\_\+date.\+h@{delta\+\_\+date.\+h}}
 {\ttfamily \#include $<$string$>$}\newline
 Include dependency graph for delta\+\_\+date.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{delta__date_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{delta__date_8h_a74d9e16c629fb46c9f168d924536e53c}{ignore\+\_\+date\+\_\+separator} ()
+\begin{DoxyCompactList}\small\item\em This function clears the next character in the buffer, and returns true if it isn\textquotesingle{}t D\+A\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR. \end{DoxyCompactList}\item 
+bool \hyperlink{delta__date_8h_abb8c4657bfbda629fd7ce0435d354637}{ask\+\_\+date} (const std\+::string \&date, int \&day, int \&month, int \&year)
+\begin{DoxyCompactList}\small\item\em This function modifies the three referenced arguments to values inputted by the user. \end{DoxyCompactList}\item 
+void \hyperlink{delta__date_8h_a661ee7feb8e24a8f63ea228865031ae8}{ask\+\_\+for\+\_\+valid\+\_\+date} (const std\+::string \&date, int \&day, int \&month, int \&year)
+\begin{DoxyCompactList}\small\item\em This function asks for a valid date with the format D\+D-\/\+M\+M-\/\+Y\+Y\+YY using ask\+\_\+date function. As long as the date is invalid, or the format is wrong, it asks for a new date. \end{DoxyCompactList}\item 
+void \hyperlink{delta__date_8h_a0aa00c0e9c3ebb2aaf65a7ccfffb6e86}{ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates} ()
+\begin{DoxyCompactList}\small\item\em This function asks for a valid dates within a given range of dates in format D\+D-\/\+M\+M-\/\+Y\+Y\+YY and display the number of day between the choosen dates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{delta__date_8h_a0aa00c0e9c3ebb2aaf65a7ccfffb6e86}\label{delta__date_8h_a0aa00c0e9c3ebb2aaf65a7ccfffb6e86}} 
+\index{delta\+\_\+date.\+h@{delta\+\_\+date.\+h}!ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates@{ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates}}
+\index{ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates@{ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates}!delta\+\_\+date.\+h@{delta\+\_\+date.\+h}}
+\subsubsection{\texorpdfstring{ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates()}{ask\_and\_compute\_delta\_day\_between\_two\_dates()}}
+{\footnotesize\ttfamily void ask\+\_\+and\+\_\+compute\+\_\+delta\+\_\+day\+\_\+between\+\_\+two\+\_\+dates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function asks for a valid dates within a given range of dates in format D\+D-\/\+M\+M-\/\+Y\+Y\+YY and display the number of day between the choosen dates. 
+
+\mbox{\Hypertarget{delta__date_8h_abb8c4657bfbda629fd7ce0435d354637}\label{delta__date_8h_abb8c4657bfbda629fd7ce0435d354637}} 
+\index{delta\+\_\+date.\+h@{delta\+\_\+date.\+h}!ask\+\_\+date@{ask\+\_\+date}}
+\index{ask\+\_\+date@{ask\+\_\+date}!delta\+\_\+date.\+h@{delta\+\_\+date.\+h}}
+\subsubsection{\texorpdfstring{ask\+\_\+date()}{ask\_date()}}
+{\footnotesize\ttfamily bool ask\+\_\+date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date,  }\item[{int \&}]{day,  }\item[{int \&}]{month,  }\item[{int \&}]{year }\end{DoxyParamCaption})}
+
+
+
+This function modifies the three referenced arguments to values inputted by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & string telling the user if it\textquotesingle{}s the start date or end date \\
+\hline
+{\em day} & input of the user \\
+\hline
+{\em month} & input of the user \\
+\hline
+{\em year} & input of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the date has been retrieve successfully according to D\+D-\/\+M\+M-\/\+Y\+Y\+YY format, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{delta__date_8h_a661ee7feb8e24a8f63ea228865031ae8}\label{delta__date_8h_a661ee7feb8e24a8f63ea228865031ae8}} 
+\index{delta\+\_\+date.\+h@{delta\+\_\+date.\+h}!ask\+\_\+for\+\_\+valid\+\_\+date@{ask\+\_\+for\+\_\+valid\+\_\+date}}
+\index{ask\+\_\+for\+\_\+valid\+\_\+date@{ask\+\_\+for\+\_\+valid\+\_\+date}!delta\+\_\+date.\+h@{delta\+\_\+date.\+h}}
+\subsubsection{\texorpdfstring{ask\+\_\+for\+\_\+valid\+\_\+date()}{ask\_for\_valid\_date()}}
+{\footnotesize\ttfamily void ask\+\_\+for\+\_\+valid\+\_\+date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date,  }\item[{int \&}]{day,  }\item[{int \&}]{month,  }\item[{int \&}]{year }\end{DoxyParamCaption})}
+
+
+
+This function asks for a valid date with the format D\+D-\/\+M\+M-\/\+Y\+Y\+YY using ask\+\_\+date function. As long as the date is invalid, or the format is wrong, it asks for a new date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em day} & input of the user in function \hyperlink{delta__date_8h_abb8c4657bfbda629fd7ce0435d354637}{ask\+\_\+date()} \\
+\hline
+{\em month} & input of the user in function \hyperlink{delta__date_8h_abb8c4657bfbda629fd7ce0435d354637}{ask\+\_\+date()} \\
+\hline
+{\em year} & input of the user in function \hyperlink{delta__date_8h_abb8c4657bfbda629fd7ce0435d354637}{ask\+\_\+date()} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{delta__date_8h_a74d9e16c629fb46c9f168d924536e53c}\label{delta__date_8h_a74d9e16c629fb46c9f168d924536e53c}} 
+\index{delta\+\_\+date.\+h@{delta\+\_\+date.\+h}!ignore\+\_\+date\+\_\+separator@{ignore\+\_\+date\+\_\+separator}}
+\index{ignore\+\_\+date\+\_\+separator@{ignore\+\_\+date\+\_\+separator}!delta\+\_\+date.\+h@{delta\+\_\+date.\+h}}
+\subsubsection{\texorpdfstring{ignore\+\_\+date\+\_\+separator()}{ignore\_date\_separator()}}
+{\footnotesize\ttfamily bool ignore\+\_\+date\+\_\+separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function clears the next character in the buffer, and returns true if it isn\textquotesingle{}t D\+A\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR. 
+
+\begin{DoxyReturn}{Returns}
+false if the buffer contains the char D\+A\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR, true if it doesn\textquotesingle{}t 
+\end{DoxyReturn}
