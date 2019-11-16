@@ -10,15 +10,8 @@
 #define CLEAR_BUFFER std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n')
 
 /**
- * @return false if the buffer contains the char DATE_SEPARATOR, true if it doesn't
- * @brief This function clears the next character in the buffer,
- * and returns true if it isn't DATE_SEPARATOR
- */
-bool ignore_date_separator();
-
-/**
  * @param year any given year
- * @return true if year is a leap year, false if it isn't
+ * @return true if year is a leap year, else false
  */
 bool is_leap_year(int year);
 
@@ -27,7 +20,7 @@ bool is_leap_year(int year);
  * @param month any number
  * @param year any number
  * @return true if the date composed of day, month and year is a valid date
- * @brief This function checks that year is between 1900 and 2300,
+ * @brief This function checks that year is between a range of date given by constants,
  * that month is between 1 and 12
  * and that day is between 1 and 28/29/30/31, depending on the month
  */

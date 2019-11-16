@@ -18,12 +18,16 @@ Compilateur :
 #include <iomanip>
 using namespace std;
 
+enum DateOrderFlag {
+   NO_ERROR,
+   DAY_ERROR,
+   MONTH_ERROR,
+   YEAR_ERROR
+};
 
-bool ignore_date_separator() {
-   if (cin.fail())
-      cin.clear();
-   return getchar() != DATE_SEPARATOR;
-}
+DateOrderFlag _check_date_order(
+        int start_day, int start_month, int start_year,
+        int end_day, int end_month, int end_year);
 
 bool is_leap_year(int year) {
 
@@ -76,31 +80,57 @@ bool is_date_valid(int day, int month, int year) {
    return true;
 }
 
+DateOrderFlag _check_date_order(
+        int start_day, int start_month, int start_year,
+        int end_day, int end_month, int end_year) {
+
+   if (end_year > start_year) return NO_ERROR;
+   else if (end_year < start_year) return YEAR_ERROR;
+
+   if (end_month > start_month) return NO_ERROR;
+   else if (end_month < start_month) return MONTH_ERROR;
+
+   if (end_day > start_day) return NO_ERROR;
+   else if (end_day < start_day) return DAY_ERROR;
+
+   return NO_ERROR;
+}
 
 bool check_date_order(
         int start_day, int start_month, int start_year,
         int end_day, int end_month, int end_year) {
 
-   if (end_year > start_year) return true;
-   else if (end_year < start_year) {
-      cerr << "L'annee de debut doit etre plus petite que l'annee de fin" << endl;
+   switch (_check_date_order(start_day, start_month, start_year, end_day, end_month, end_year)) {
+      case NO_ERROR: return true;
+
+      case YEAR_ERROR:
+         cerr << "L'annee de debut doit etre plus petite que l'annee de fin" << endl;
+         return false;
+      case MONTH_ERROR:
+         cerr << "Le mois de debut doit etre plus petite que le mois de fin" << endl;
+         return false;
+      case DAY_ERROR:
+         cerr << "Le jour de debut doit etre plus petite que le jour de fin" << endl;
+         return false;
+   }
+}
+
+bool check_date_in_correct_range(int day, int month, int year) {
+   if(_check_date_order(MIN_DAY, MIN_MONTH, MIN_YEAR, day, month, year) != NO_ERROR) {
+      cerr << "Les dates choisies doivent être après le "
+           << MIN_DAY << '-' << MIN_MONTH << '-' << MIN_YEAR
+           << endl;
       return false;
    }
-
-   if (end_month > start_month) return true;
-   else if (end_month < start_month) {
-      cerr << "Le mois de debut doit etre plus petite que le mois de fin" << endl;
+   if(_check_date_order(day, month, year, MAX_DAY, MAX_MONTH, MAX_YEAR) != NO_ERROR) {
+      cerr << "Les dates choisies doivent être avant le "
+           << MAX_DAY << '-' << MAX_MONTH << '-' << MAX_YEAR
+           << endl;
       return false;
    }
-
-   if (end_day > start_day) return true;
-   else if (end_day < start_day) {
-      cerr << "Le jour de debut doit etre plus petite que le jour de fin" << endl;
-      return false;
-   }
-
    return true;
 }
+
 
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
 

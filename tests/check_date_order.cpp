@@ -31,8 +31,8 @@ bool check_function_check_date_order(
              << "Given dates:"                                          << endl
              << start_day << '-' << start_month << '-' << start_year    << endl
              << end_day   << '-' << end_month   << '-' << end_year      << endl
-             << "Expected: "    << boolalpha << expected                << endl
-             << "Test result: " << boolalpha << result                  << endl
+             << "Expected: "     << boolalpha   << expected             << endl
+             << "Test result: "  << boolalpha   << result               << endl
              << endl;
     }
 

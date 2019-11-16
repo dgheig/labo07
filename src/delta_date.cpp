@@ -5,6 +5,12 @@
 
 using namespace std;
 
+bool ignore_date_separator() {
+   if (cin.fail())
+      cin.clear();
+   return getchar() != DATE_SEPARATOR;
+}
+
 void ask_and_compute_delta_day_between_two_dates() {
 
    int start_day;
@@ -24,9 +30,9 @@ void ask_and_compute_delta_day_between_two_dates() {
                end_day, end_month, end_year));
 
     cout << "Il y a "
-              << days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year)
-              << " jours entre les deux dates entrees."
-              << endl;
+         << days_between_dates(start_day, start_month, start_year, end_day, end_month, end_year)
+         << " jours entre les deux dates entrees."
+         << endl;
 }
 
 bool ask_date(const string& date, int& day, int& month, int& year) {
@@ -54,10 +60,6 @@ bool ask_date(const string& date, int& day, int& month, int& year) {
 
 }
 
-/**
-    Ask the user for date up that the date is valide
-    return void
-*/
 void ask_for_valid_date(const string& date, int& day, int& month, int& year) {
 
    bool re_ask = false;

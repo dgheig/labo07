@@ -31,8 +31,8 @@ bool check_function_days_between_dates(
              << "Given dates:"                                          << endl
              << start_day << '-' << start_month << '-' << start_year    << endl
              << end_day   << '-' << end_month   << '-' << end_year      << endl
-             << "Expected: "    << expected                             << endl
-             << "Test result: " << result                               << endl
+             << "Expected: "     << expected                            << endl
+             << "Test result: "  << result                              << endl
              << endl;
     }
 }
@@ -42,7 +42,7 @@ int main() {
     check_function_days_between_dates(
             1, 1, 2019,
             1, 3, 2019,
-            50
+            58
     );
 
 
