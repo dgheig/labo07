@@ -6,7 +6,7 @@ Auteur(s)   : Yannick Schaufelberger et David Gallay
 Date        : 14.11.2019
 
 But         : test the check_date_order function
-Remarque(s) :
+Remarque(s) : 
 Compilateur :
 -----------------------------------------------------------------------------------*/
 
@@ -15,7 +15,7 @@ Compilateur :
 using namespace std;
 
 
-bool check_function_check_date_order(
+void check_function_check_date_order(
     int start_day, int start_month, int start_year,
     int end_day, int end_month, int end_year,
     bool expected ) {

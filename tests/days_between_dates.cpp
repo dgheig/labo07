@@ -15,7 +15,7 @@ Compilateur :
 using namespace std;
 
 
-bool check_function_days_between_dates(
+void check_function_days_between_dates(
     int start_day, int start_month, int start_year,
     int end_day, int end_month, int end_year,
     int expected ) {
@@ -39,10 +39,20 @@ bool check_function_days_between_dates(
 
 int main() {
 
-    check_function_days_between_dates(
+   check_function_days_between_dates(
             1, 1, 2019,
             1, 3, 2019,
-            58
+            59
+    );
+   check_function_days_between_dates(
+            1, 1, 2019,
+            31, 12, 2019,
+            364
+    );
+   check_function_days_between_dates(
+            1, 1, 2016,
+            31, 12, 2016,
+            365
     );
 
 

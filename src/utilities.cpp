@@ -135,7 +135,6 @@ bool check_date_in_correct_range(int day, int month, int year) {
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
 
    int daysSinceStart = get_days_since_reference_day(startDay, startMonth, startYear);
-   cout << endl;
    int daysSinceEnd = get_days_since_reference_day(endDay, endMonth, endYear);
 
    int daysBetweenDates = daysSinceEnd - daysSinceStart;

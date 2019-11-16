@@ -15,7 +15,7 @@ Compilateur :
 using namespace std;
 
 
-bool check_function_is_date_valid(int day, int month, int year, bool expected) {
+void check_function_is_date_valid(int day, int month, int year, bool expected) {
 
     if (is_date_valid(day, month, year) != expected) {
         cerr << "Test does not correspond the expected result." << endl
@@ -35,6 +35,8 @@ int main() {
     check_function_is_date_valid(1, 13, 2019, false);
     check_function_is_date_valid(29, 2, 2000, true);
     check_function_is_date_valid(29, 2, 2001, false);
+    check_function_is_date_valid(29, 2, 1899, false);
+    check_function_is_date_valid(29, 2, 2301, false);
 
     return EXIT_SUCCESS;
 }
