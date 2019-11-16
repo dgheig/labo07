@@ -9,13 +9,13 @@
 
 #define CLEAR_BUFFER std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n')
 
-/**
+/*!
  * @param year any given year
  * @return true if year is a leap year, else false
  */
 bool is_leap_year(int year);
 
-/**
+/*!
  * @param day any number
  * @param month any number
  * @param year any number
@@ -26,7 +26,7 @@ bool is_leap_year(int year);
  */
 bool is_date_valid(int day, int month, int year);
 
-/**
+/*!
  * @param start_day a number between 1 and 31
  * @param start_month a number between 1 and 12
  * @param start_year a number between 1900 and 2300
@@ -40,7 +40,7 @@ bool check_date_order(
         int start_day, int start_month, int start_year,
         int end_day, int end_month, int end_year);
 
-/**
+/*!
  * @param startDay
  * @param startMonth
  * @param startYear
@@ -52,7 +52,7 @@ bool check_date_order(
  */
 int days_between_dates(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear);
 
-/**
+/*!
  * @param day
  * @param month
  * @param year

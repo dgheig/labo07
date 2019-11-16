@@ -5,14 +5,14 @@
 
 
 
-/**
+/*!
  * @return false if the buffer contains the char DATE_SEPARATOR, true if it doesn't
  * @brief This function clears the next character in the buffer,
  * and returns true if it isn't DATE_SEPARATOR
  */
 bool ignore_date_separator();
 
-/**
+/*!
  * @param date string telling the user if it's the start date or end date
  * @param day input of the user
  * @param month input of the user
@@ -22,7 +22,7 @@ bool ignore_date_separator();
  */
 bool ask_date(const std::string& date, int& day, int& month, int& year);
 
-/**
+/*!
  * @param date
  * @param day input of the user in function ask_date()
  * @param month input of the user in function ask_date()
@@ -32,7 +32,7 @@ bool ask_date(const std::string& date, int& day, int& month, int& year);
  */
 void ask_for_valid_date(const std::string& date, int& day, int& month, int& year);
 
-/**
+/*!
  * @brief This function asks for a valid dates within a given range of dates in format DD-MM-YYYY
  *        and display the number of day between the choosen dates.
  */

@@ -13,7 +13,7 @@ Remarque(s) : The code is separated in 4 librairies:
                3. delta_date : code that regroups all previous quoted librairies
                                and declare function specifics to this program
                4. interface  : code that is usefull to handle user interface
-Compilateur :
+Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 -----------------------------------------------------------------------------------*/
 #include "src/delta_date.h"
 #include "src/interface.h"
