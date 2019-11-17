@@ -57,12 +57,12 @@ int main() {
    check_function_days_between_dates(
             1, 1, 1900,
             31, 12, 2000,
-            36524
+            36889
     );
    check_function_days_between_dates(
             1, 1, 1900,
             31, 12, 1970,
-            25567
+            25931
     );
    check_function_days_between_dates(
             6, 2, 1900,
