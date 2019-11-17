@@ -18,6 +18,10 @@ Remarque(s) : The code is separated in 4 librairies:
 
               Function from utilities.h are tested in files of tests folder
 
+              Documentation is available under pdf and html format.
+                  - doc/doc.pdf
+                  - doc/doxy/html/index.html
+
 Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 -----------------------------------------------------------------------------------*/
 #include "src/delta_date.h"
