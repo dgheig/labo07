@@ -90,16 +90,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ab345f7b66a3e361e0a77d7b7cbf235b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8h.html#ab345f7b66a3e361e0a77d7b7cbf235b9">is_leap_year</a> (int year)</td></tr>
 <tr class="separator:ab345f7b66a3e361e0a77d7b7cbf235b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4f39d1c0d3eb7f860d0c5b45cea1508"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8h.html#ab4f39d1c0d3eb7f860d0c5b45cea1508">is_date_valid</a> (int day, int month, int year)</td></tr>
-<tr class="memdesc:ab4f39d1c0d3eb7f860d0c5b45cea1508"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks that year is between a range of date given by constants, that month is between 1 and 12 and that day is between 1 and 28/29/30/31, depending on the month.  <a href="#ab4f39d1c0d3eb7f860d0c5b45cea1508">More...</a><br /></td></tr>
+<tr class="memdesc:ab4f39d1c0d3eb7f860d0c5b45cea1508"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks that the date exists and is between a given range of dates.  <a href="#ab4f39d1c0d3eb7f860d0c5b45cea1508">More...</a><br /></td></tr>
 <tr class="separator:ab4f39d1c0d3eb7f860d0c5b45cea1508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a790d01d0aefca81c0b0d0a2087164540"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8h.html#a790d01d0aefca81c0b0d0a2087164540">check_date_order</a> (int start_day, int start_month, int start_year, int end_day, int end_month, int end_year)</td></tr>
 <tr class="separator:a790d01d0aefca81c0b0d0a2087164540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3e8eebfa9c56ba1cb79e90828cec68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8h.html#acd3e8eebfa9c56ba1cb79e90828cec68">days_between_dates</a> (int start_day, int start_month, int start_year, int end_day, int end_month, int end_year)</td></tr>
 <tr class="memdesc:acd3e8eebfa9c56ba1cb79e90828cec68"><td class="mdescLeft">&#160;</td><td class="mdescRight">This returns a negative number if the start date is after the end date.  <a href="#acd3e8eebfa9c56ba1cb79e90828cec68">More...</a><br /></td></tr>
 <tr class="separator:acd3e8eebfa9c56ba1cb79e90828cec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa87e64a9bf33e0f48d84ce37f2020ad6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8h.html#aa87e64a9bf33e0f48d84ce37f2020ad6">get_days_since_reference_day</a> (int day, int month, int year)</td></tr>
-<tr class="memdesc:aa87e64a9bf33e0f48d84ce37f2020ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is based on the Julian Day calculation found on this page : <a href="http://www.cs.utsa.edu/~cs1063/projects/Spring2011/Project1/jdn-explanation.html">http://www.cs.utsa.edu/~cs1063/projects/Spring2011/Project1/jdn-explanation.html</a>.  <a href="#aa87e64a9bf33e0f48d84ce37f2020ad6">More...</a><br /></td></tr>
-<tr class="separator:aa87e64a9bf33e0f48d84ce37f2020ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aa28dd17f6f34a0944a90f741b0251239"></a>
@@ -168,12 +165,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">start_day</td><td>a number between 1 and 31 </td></tr>
+    <tr><td class="paramname">start_day</td><td>day of the month (1 - 31 depending on the month) </td></tr>
     <tr><td class="paramname">start_month</td><td>a number between 1 and 12 </td></tr>
-    <tr><td class="paramname">start_year</td><td>a number between 1900 and 2300 </td></tr>
-    <tr><td class="paramname">end_day</td><td>a number between 1 and 31 </td></tr>
+    <tr><td class="paramname">start_year</td><td>a number between MIN_YEAR and MAX_YEAR </td></tr>
+    <tr><td class="paramname">end_day</td><td>day of the month (1 - 31) </td></tr>
     <tr><td class="paramname">end_month</td><td>a number between 1 and 12 </td></tr>
-    <tr><td class="paramname">end_year</td><td>a number between 1900 and 2300 </td></tr>
+    <tr><td class="paramname">end_year</td><td>a number between MIN_YEAR and MAX_YEAR </td></tr>
   </table>
   </dd>
 </dl>
@@ -247,51 +244,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa87e64a9bf33e0f48d84ce37f2020ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87e64a9bf33e0f48d84ce37f2020ad6">&#9670;&nbsp;</a></span>get_days_since_reference_day()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int get_days_since_reference_day </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>day</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>month</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>year</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function is based on the Julian Day calculation found on this page : <a href="http://www.cs.utsa.edu/~cs1063/projects/Spring2011/Project1/jdn-explanation.html">http://www.cs.utsa.edu/~cs1063/projects/Spring2011/Project1/jdn-explanation.html</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">day</td><td></td></tr>
-    <tr><td class="paramname">month</td><td></td></tr>
-    <tr><td class="paramname">year</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of days between January 1st 1900 and the date defined by day, month and year </dd></dl>
-
-</div>
-</div>
 <a id="ab4f39d1c0d3eb7f860d0c5b45cea1508"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4f39d1c0d3eb7f860d0c5b45cea1508">&#9670;&nbsp;</a></span>is_date_valid()</h2>
 
@@ -324,7 +276,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This function checks that year is between a range of date given by constants, that month is between 1 and 12 and that day is between 1 and 28/29/30/31, depending on the month. </p>
+<p>This function checks that the date exists and is between a given range of dates. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">day</td><td>any number </td></tr>
