@@ -32,6 +32,8 @@ DateOrderFlag _check_date_order(
 
 bool check_date_in_correct_range(int day, int month, int year);
 
+int get_days_since_reference_day(int day, int month, int year);
+
 bool is_leap_year(int year) {
 
    if (year % 4) return false;
@@ -141,7 +143,7 @@ int get_days_since_reference_day(int day, int month, int year) {
 
    const int DAY_PER_YEAR   = 365;
    const int MONTH_PER_YEAR = 12;
-   const int REFERENCE_YEAR = 1900;
+   const int REFERENCE_YEAR = 1600; // Must be a leap year
 
    int start_of_year_shifter = (14 - month) / MONTH_PER_YEAR;
    int number_of_months = month + MONTH_PER_YEAR * start_of_year_shifter - 3;
