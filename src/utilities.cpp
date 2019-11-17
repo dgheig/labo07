@@ -128,7 +128,6 @@ bool check_date_order(
    }
 }
 
-
 int days_between_dates(int start_day, int start_month, int start_year, int end_day, int end_month, int end_year) {
 
    int days_since_start = get_days_since_reference_day(start_day, start_month, start_year);
@@ -140,11 +139,16 @@ int days_between_dates(int start_day, int start_month, int start_year, int end_d
 
 int get_days_since_reference_day(int day, int month, int year) {
 
-   int a = (14 - month) / 12;
-   int y = year - 1900 - a;
-   int m = month + 12 * a - 3;
+   const int DAY_PER_YEAR   = 365;
+   const int MONTH_PER_YEAR = 12;
+   const int REFERENCE_YEAR = 1900;
 
-   int days = day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 + 58;
+   int start_of_year_shifter = (14 - month) / MONTH_PER_YEAR;
+   int number_of_months = month + MONTH_PER_YEAR * start_of_year_shifter - 3;
+   int number_of_years = year - REFERENCE_YEAR - start_of_year_shifter;
+   int number_of_leap_years = number_of_years / 4 - number_of_years / 100 + number_of_years / 400;
+
+   int days = day + (153 * number_of_months + 2) / 5 + DAY_PER_YEAR * number_of_years + number_of_leap_years + 58;
 
    return days;
 
