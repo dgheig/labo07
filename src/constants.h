@@ -1,7 +1,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-enum MONTHS {
+enum Months {
    JANUAR = 1,
    FEBRUAR,
    MARCH,

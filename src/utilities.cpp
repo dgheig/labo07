@@ -1,17 +1,3 @@
-/*
------------------------------------------------------------------------------------
-Laboratoire : Labo_07
-Fichier     : utilities.cpp
-Auteur(s)   : Yannick Schaufelberger et David Gallay
-Date        : 11.11.2019
-
-But         :
-Remarque(s) : Function ask_date(void) does not ensure that the values day, month and
-              year are given on 2/2/4 digits respectively.
-              Inputs such as "00001-0001-00020000" will be considered as "01-01-2000"
-Compilateur :
------------------------------------------------------------------------------------*/
-
 #include "utilities.h"
 #include "constants.h"
 #include <iostream>

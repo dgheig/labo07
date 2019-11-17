@@ -3,8 +3,6 @@
 
 #include <string>
 
-
-
 /*!
  * @return false if the buffer contains the char DATE_SEPARATOR, true if it doesn't
  * @brief This function clears the next character in the buffer,

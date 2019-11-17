@@ -8,11 +8,16 @@ Date        : 11.11.2019
 But         : Ask the user for valid dates in DD-MM-YYYY format and display the
               number of days between the choosen dates
 Remarque(s) : The code is separated in 4 librairies:
-               1. utilities  : code that is usefull to handle dates
-               2. constants  : constants that are specific to this program
-               3. delta_date : code that regroups all previous quoted librairies
+                  1. utilities  : code that is usefull to handle dates
+                  2. constants  : constants that are specific to this program
+                  3. delta_date : code that regroups all previous quoted librairies
                                and declare function specifics to this program
-               4. interface  : code that is usefull to handle user interface
+                  4. interface  : code that is usefull to handle user interface
+              The naming convention is snake_case for function and variables and
+              PascalCase for enumerations.
+
+              Function from utilities.h are tested in files of tests folder
+
 Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 -----------------------------------------------------------------------------------*/
 #include "src/delta_date.h"

@@ -1,5 +1,3 @@
-//labo_07_schaufelberger_yannick_gallay_david.h
-
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
