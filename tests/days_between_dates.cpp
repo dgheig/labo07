@@ -54,6 +54,21 @@ int main() {
             31, 12, 2016,
             365
     );
+   check_function_days_between_dates(
+            1, 1, 1900,
+            31, 12, 2000,
+            36524
+    );
+   check_function_days_between_dates(
+            1, 1, 1900,
+            31, 12, 1970,
+            25567
+    );
+   check_function_days_between_dates(
+            6, 2, 1900,
+            1, 3, 1908,
+            2945
+    );
 
 
 
