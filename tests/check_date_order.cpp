@@ -6,7 +6,7 @@ Auteur(s)   : Yannick Schaufelberger et David Gallay
 Date        : 14.11.2019
 
 But         : test the check_date_order function
-Remarque(s) : 
+Remarque(s) :
 Compilateur :
 -----------------------------------------------------------------------------------*/
 
@@ -14,6 +14,7 @@ Compilateur :
 #include <iostream>
 using namespace std;
 
+int exit_value = EXIT_SUCCESS;
 
 void check_function_check_date_order(
     int start_day, int start_month, int start_year,
@@ -34,6 +35,7 @@ void check_function_check_date_order(
              << "Expected: "     << boolalpha   << expected             << endl
              << "Test result: "  << boolalpha   << result               << endl
              << endl;
+        int exit_value = EXIT_FAILURE;
     }
 
 }
@@ -54,5 +56,5 @@ int main() {
 
 
 
-    return EXIT_SUCCESS;
+    return exit_value;
 }

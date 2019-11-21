@@ -14,6 +14,9 @@ Compilateur :
 #include <iostream>
 using namespace std;
 
+int exit_value = EXIT_SUCCESS;
+
+
 bool check_function_is_leap_year(int year, bool expected) {
 
     if (is_leap_year(year) != expected) {
@@ -21,6 +24,7 @@ bool check_function_is_leap_year(int year, bool expected) {
              << "Year: "                  << year                  << endl
              << "Expected as leap year: " << boolalpha << expected << endl
              << endl;
+        int exit_value = EXIT_FAILURE;
     }
 }
 
@@ -30,5 +34,5 @@ int main() {
     check_function_is_leap_year(2001, false);
     check_function_is_leap_year(1900, false);
 
-    return EXIT_SUCCESS;
+    return exit_value;
 }
