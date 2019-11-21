@@ -8,8 +8,9 @@ COMPILE = $(GXX) $(STD) $(WARNING)
 
 OBJ = obj
 BUILDS = builds
+TESTS = tests
 
-all: main
+all: main is_date_valid is_leap_year check_date_order days_between_dates
 
 build_dir:
 	mkdir -p $(BUILDS)
@@ -28,5 +29,17 @@ utilities.o: setup src/utilities.h src/utilities.cpp src/constants.h
 delta_date.o: setup utilities.o src/constants.h src/delta_date.h src/delta_date.cpp
 	$(COMPILE) -c src/delta_date.cpp -o $(OBJ)/delta_date.o
 
-main: labo_07_schaufelberger_yannick_gallay_david.cpp delta_date.o interface.o
+main: labo_07_schaufelberger_yannick_gallay_david.cpp utilities.o delta_date.o interface.o
 	$(COMPILE) src/delta_date.h src/utilities.h src/interface.h $(OBJ)/utilities.o $(OBJ)/delta_date.o $(OBJ)/interface.o labo_07_schaufelberger_yannick_gallay_david.cpp -o $(BUILDS)/labo07
+
+is_date_valid: is_date_valid.cpp utilities.o
+	$(COMPILE) src/utilities.h $(OBJ)/utilities.o is_date_valid.cpp -o $(BUILDS)/is_date_valid
+
+is_leap_year: is_leap_year.cpp utilities.o
+	$(COMPILE) src/utilities.h $(OBJ)/utilities.o is_leap_year.cpp -o $(BUILDS)/is_leap_year
+
+check_date_order: check_date_order.cpp utilities.o
+	$(COMPILE) src/utilities.h $(OBJ)/utilities.o check_date_order.cpp -o $(BUILDS)/check_date_order
+
+days_between_dates: days_between_dates.cpp utilities.o
+	$(COMPILE) src/utilities.h $(OBJ)/utilities.o days_between_dates.cpp -o $(BUILDS)/days_between_dates

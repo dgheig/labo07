@@ -9,5 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: compile
-      run: .builds/labo07
+    - name: compile all
+      run: make
+    - name: test is_date_valid
+      run: ./builds/is_date_valid
+    - name: test is_leap_year
+      run: ./builds/is_leap_year
+    - name: test check_date_order
+      run: ./builds/check_date_order
+    - name: test days_between_dates
+      run: ./builds/days_between_dates
