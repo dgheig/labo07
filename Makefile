@@ -10,7 +10,9 @@ OBJ = obj
 BUILDS = builds
 TESTS = tests
 
-all: main is_date_valid is_leap_year check_date_order days_between_dates
+all: main compile_tests
+
+compile_tests: is_date_valid is_leap_year check_date_order days_between_dates
 
 build_dir:
 	mkdir -p $(BUILDS)
