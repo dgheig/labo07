@@ -14,6 +14,8 @@ Compilateur :
 #include <iostream>
 using namespace std;
 
+int exit_value = EXIT_SUCCESS;
+
 
 void check_function_is_date_valid(int day, int month, int year, bool expected) {
 
@@ -25,6 +27,7 @@ void check_function_is_date_valid(int day, int month, int year, bool expected) {
              << "Year: "                  << year               << endl
              << "Expected: " << boolalpha << expected           << endl
              << endl;
+        int exit_value = EXIT_FAILURE;
     }
 }
 
@@ -38,5 +41,5 @@ int main() {
     check_function_is_date_valid(29, 2, 1899, false);
     check_function_is_date_valid(29, 2, 2301, false);
 
-    return EXIT_SUCCESS;
+    return exit_value;
 }

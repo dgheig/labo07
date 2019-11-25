@@ -14,6 +14,8 @@ Compilateur :
 #include <iostream>
 using namespace std;
 
+int exit_value = EXIT_SUCCESS;
+
 
 void check_function_days_between_dates(
     int start_day, int start_month, int start_year,
@@ -34,6 +36,7 @@ void check_function_days_between_dates(
              << "Expected: "     << expected                            << endl
              << "Test result: "  << result                              << endl
              << endl;
+        int exit_value = EXIT_FAILURE;
     }
 }
 
@@ -72,5 +75,5 @@ int main() {
 
 
 
-    return EXIT_SUCCESS;
+    return exit_value;
 }

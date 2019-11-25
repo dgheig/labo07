@@ -2,6 +2,9 @@
 *.o
 builds/*
 doc/doxy/latex/*
+<<<<<<< HEAD
 doc/doxygen_install.sh
 doc/generate_doc.sh
 compile_main.sh
+=======
+>>>>>>> 756b53446cbed809d54dd913130a4e787883a0a1
